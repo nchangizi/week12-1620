@@ -20,3 +20,15 @@ function changeText() {
   }
 }
 clickButton.addEventListener("click", changeText);
+
+function updateImage()
+{
+    const image = document.querySelector("#shoppingCart");
+    image.src = "images/263142.png";
+    image.alt = "shopping cart";
+    image.width="100";
+    image.height="100";
+    // image.setAttribute("src","")
+}
+
+clickButton.addEventListener("click", updateImage);
