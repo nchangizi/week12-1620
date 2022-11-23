@@ -21,14 +21,32 @@ function changeText() {
 }
 clickButton.addEventListener("click", changeText);
 
-function updateImage()
-{
-    const image = document.querySelector("#shoppingCart");
-    image.src = "images/263142.png";
-    image.alt = "shopping cart";
-    image.width="100";
-    image.height="100";
-    // image.setAttribute("src","")
+function updateImage(e) {
+  // passed automatically
+  console.log(e);
+  const image = document.querySelector("#shoppingCart");
+  image.src = "images/263142.png";
+  image.alt = "shopping cart";
+  image.width = "100";
+  image.height = "100";
+  // image.setAttribute("src","")
 }
 
 clickButton.addEventListener("click", updateImage);
+
+const buttonContainer = document.querySelector(".button-container");
+buttonContainer.addEventListener("mouseover", changeBGGreen);
+
+function changeBGGreen(e) {
+    console.log(e.target.tagName)
+  if (e.target.tagName === "BUTTON") {
+    //    e.target.style.backgroundColor = "green";
+    e.target.classList.add("greenBG");
+  }
+}
+
+buttonContainer.addEventListener("click", changeButtonTextColor);
+function changeButtonTextColor(e)
+{
+    e.target.style.color = e.target.textContent;
+}
